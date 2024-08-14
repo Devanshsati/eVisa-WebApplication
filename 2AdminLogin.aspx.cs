@@ -12,15 +12,18 @@ namespace WebApplication06_eVisa
 
         protected void BtnLogin_Click(object sender, EventArgs e)
         {
+            string uid;
 
-            SqlConnection con = new SqlConnection("uid=sa; password=manager@123; database=DOTNet; server=7Y27QV3\\SQLEXPRESS");
+            SqlConnection con = new SqlConnection("uid=sa; password=manager@123; database=eVISA; server=7Y27QV3\\SQLEXPRESS");
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM users WHERE USERNAME='"+txtUsername.Text+"' AND PASSWORD='"+txtPassword.Text+"'", con);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM admin WHERE EMAIL='"+ txtUsername.Text +"' OR USERNAME='"+txtUsername.Text+"' AND PASSWORD='"+txtPassword.Text+"'", con);
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
+                    uid= reader["employeeid"].ToString();
+                    Response.Redirect("5AdminPage.aspx?uid=" + uid);
                     string script = $"alert('Login Successful: {txtUsername.Text}');" + "window.location.href='5AdminPage.aspx';";
                     ClientScript.RegisterStartupScript(this.GetType(), "alertAndRedirect", script, true);
                 }

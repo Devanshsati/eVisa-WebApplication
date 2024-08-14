@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using System.Data;
 using System.Web.UI.WebControls;
+using System.Net.Cache;
 
 namespace WebApplication06_eVisa
 {
@@ -9,34 +10,34 @@ namespace WebApplication06_eVisa
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection("uid=sa; password=manager@123; database=DOTNet; server=7Y27QV3\\SQLEXPRESS");
+            SqlConnection con = new SqlConnection("uid=sa; password=manager@123; database=EVisa; server=7Y27QV3\\SQLEXPRESS");
             try
             {
-                SqlDataAdapter a = new SqlDataAdapter("select * from emp", con);
+                SqlDataAdapter a = new SqlDataAdapter("select * from VisaStatus", con);
                 DataSet ds1 = new DataSet();
                 a.Fill(ds1);
                 VisaGridView.DataSource = ds1;
                 VisaGridView.DataBind();
 
-                SqlDataAdapter b = new SqlDataAdapter("select * from dept", con);
+                SqlDataAdapter b = new SqlDataAdapter("select * from ApplicantReport", con);
                 DataSet ds2 = new DataSet();
                 b.Fill(ds2);
                 ApplicantGridView.DataSource = ds2;
                 ApplicantGridView.DataBind();
 
-                SqlDataAdapter c = new SqlDataAdapter("select * from users", con);
+                SqlDataAdapter c = new SqlDataAdapter("select * from InterviewReport", con);
                 DataSet ds3 = new DataSet();
                 c.Fill(ds3);
                 InterviewGridView.DataSource = ds3;
                 InterviewGridView.DataBind();
 
-                SqlDataAdapter d = new SqlDataAdapter("select * from salgrade", con);
+                SqlDataAdapter d = new SqlDataAdapter("select * from ResultReport", con);
                 DataSet ds4 = new DataSet();
                 d.Fill(ds4);
                 ResultGridView.DataSource = ds4;
                 ResultGridView.DataBind();
 
-                SqlDataAdapter ee = new SqlDataAdapter("select * from student", con);
+                SqlDataAdapter ee = new SqlDataAdapter("select * from OnsiteReport", con);
                 DataSet ds5 = new DataSet();
                 ee.Fill(ds5);
                 OnsiteGridView.DataSource = ds5;
@@ -72,5 +73,12 @@ namespace WebApplication06_eVisa
         {
             OnsiteGridView.PageIndex = e.NewPageIndex;
         }
+
+        protected void BtnFeedback_Click(object sender, EventArgs e)
+        {
+            //Request.QueryString["uid"];
+            ClientScript.RegisterStartupScript(this.GetType(), "alert", $"Working", true);
+        }
+
     }
 }

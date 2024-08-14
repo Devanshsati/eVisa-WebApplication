@@ -205,7 +205,7 @@
                 <p>View and manage feedback sent by employees and HR.</p>
                 <div class="form-group">
                     <textarea placeholder="Enter your feedback here..." rows="2"></textarea>
-                    <button type="button">Submit Feedback</button>
+                    <button id="btnFeedback" type="button" onclick="BtnFeedback_Click">Submit Feedback</button>
                 </div>
             </div>
         </div>
@@ -352,7 +352,7 @@
             <div class="popup-content w-75">
                 <span class="close" onclick="closePopup('manageApplicant')">&times;</span>
                 <h3>View Applicant Report</h3>
-                <asp:GridView ID="ApplicantGridView" runat="server" CssClass="table table-striped table-bordered" AutoGenerateColumns="True" AllowPaging="True" PageSize="5" OnPageIndexChanging="ApplicantGridView_PageIndexChanging"></asp:GridView>
+                <asp:GridView ID="ApplicantGridView" runat="server" CssClass="table table-striped table-bordered grid-scroll" AutoGenerateColumns="True"></asp:GridView>
             </div>
         </div>
 
@@ -361,7 +361,7 @@
             <div class="popup-content w-75">
                 <span class="close" onclick="closePopup('manageInterview')">&times;</span>
                 <h3>View Interview Report</h3>
-                <asp:GridView ID="InterviewGridView" runat="server" CssClass="table table-striped table-bordered" AutoGenerateColumns="True" AllowPaging="True" PageSize="5" OnPageIndexChanging="InterviewGridView_PageIndexChanging"></asp:GridView>
+                <asp:GridView ID="InterviewGridView" runat="server" CssClass="table table-striped table-bordered grid-scroll" AutoGenerateColumns="True"></asp:GridView>
             </div>
         </div>
 
@@ -370,7 +370,7 @@
             <div class="popup-content w-75">
                 <span class="close" onclick="closePopup('manageResult')">&times;</span>
                 <h3>View Result Report</h3>
-                <asp:GridView ID="ResultGridView" runat="server" CssClass="table table-striped table-bordered" AutoGenerateColumns="True" AllowPaging="True" PageSize="5" OnPageIndexChanging="ResultGridView_PageIndexChanging"></asp:GridView>
+                <asp:GridView ID="ResultGridView" runat="server" CssClass="table table-striped table-bordered grid-scroll" AutoGenerateColumns="True"></asp:GridView>
             </div>
         </div>
 
@@ -379,7 +379,7 @@
             <div class="popup-content w-75">
                 <span class="close" onclick="closePopup('manageOnsite')">&times;</span>
                 <h3>View Onsite Report</h3>
-                <asp:GridView ID="OnsiteGridView" runat="server" CssClass="table table-striped table-bordered" AutoGenerateColumns="True" AllowPaging="True" PageSize="5" OnPageIndexChanging="OnsiteGridView_PageIndexChanging"></asp:GridView>
+                <asp:GridView ID="OnsiteGridView" runat="server" CssClass="table table-striped table-bordered grid-scroll" AutoGenerateColumns="True"></asp:GridView>
             </div>
         </div>
     </form>
