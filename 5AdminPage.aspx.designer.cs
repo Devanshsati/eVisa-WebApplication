@@ -24,24 +24,6 @@ namespace WebApplication06_eVisa
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// hrId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox hrId;
-
-        /// <summary>
-        /// rfvHrId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvHrId;
-
-        /// <summary>
         /// hrName control.
         /// </summary>
         /// <remarks>
@@ -58,6 +40,24 @@ namespace WebApplication06_eVisa
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvHrName;
+
+        /// <summary>
+        /// hrUsername control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox hrUsername;
+
+        /// <summary>
+        /// rfvHrUsername control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvHrUsername;
 
         /// <summary>
         /// hrEmail control.
@@ -78,76 +78,58 @@ namespace WebApplication06_eVisa
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvHrEmail;
 
         /// <summary>
-        /// revHrEmail control.
+        /// hrPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revHrEmail;
+        protected global::System.Web.UI.WebControls.TextBox hrPassword;
 
         /// <summary>
-        /// hrPhone control.
+        /// rfvHrPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox hrPhone;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvHrPassword;
 
         /// <summary>
-        /// rfvHrPhone control.
+        /// hrLocation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvHrPhone;
+        protected global::System.Web.UI.WebControls.TextBox hrLocation;
 
         /// <summary>
-        /// revHrPhone control.
+        /// rfvHrLocation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revHrPhone;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvHrLocation;
 
         /// <summary>
-        /// hrDesignation control.
+        /// btnAddHR control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox hrDesignation;
+        protected global::System.Web.UI.WebControls.Button btnAddHR;
 
         /// <summary>
-        /// rfvHrDesignation control.
+        /// gvHR control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvHrDesignation;
-
-        /// <summary>
-        /// employeeId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox employeeId;
-
-        /// <summary>
-        /// rfvEmployeeId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmployeeId;
+        protected global::System.Web.UI.WebControls.GridView gvHR;
 
         /// <summary>
         /// employeeName control.
@@ -168,6 +150,24 @@ namespace WebApplication06_eVisa
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmployeeName;
 
         /// <summary>
+        /// employeeUsername control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox employeeUsername;
+
+        /// <summary>
+        /// rfvEmployeeUsername control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmployeeUsername;
+
+        /// <summary>
         /// employeeEmail control.
         /// </summary>
         /// <remarks>
@@ -186,58 +186,58 @@ namespace WebApplication06_eVisa
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmployeeEmail;
 
         /// <summary>
-        /// revEmployeeEmail control.
+        /// employeePassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revEmployeeEmail;
+        protected global::System.Web.UI.WebControls.TextBox employeePassword;
 
         /// <summary>
-        /// employeePhone control.
+        /// rfvEmployeePassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox employeePhone;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmployeePassword;
 
         /// <summary>
-        /// rfvEmployeePhone control.
+        /// employeeLocation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmployeePhone;
+        protected global::System.Web.UI.WebControls.TextBox employeeLocation;
 
         /// <summary>
-        /// revEmployeePhone control.
+        /// rfvEmployeeLocation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revEmployeePhone;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmployeeLocation;
 
         /// <summary>
-        /// employeeDesignation control.
+        /// btnAddEmployee control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox employeeDesignation;
+        protected global::System.Web.UI.WebControls.Button btnAddEmployee;
 
         /// <summary>
-        /// rfvEmployeeDesignation control.
+        /// gvEmployee control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmployeeDesignation;
+        protected global::System.Web.UI.WebControls.GridView gvEmployee;
 
         /// <summary>
         /// VisaGridView control.
@@ -283,5 +283,14 @@ namespace WebApplication06_eVisa
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView OnsiteGridView;
+
+        /// <summary>
+        /// FeedbackGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView FeedbackGridView;
     }
 }
