@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Data;
+using System.Web.UI.WebControls;
+using System.Xml.Linq;
 
 namespace WebApplication06_eVisa
 {
@@ -59,13 +61,54 @@ namespace WebApplication06_eVisa
         }
 
         protected void BtnAddHR_Click(object sender, EventArgs e)
-        {
-
+        {       
+            SqlConnection con = new SqlConnection("uid=sa; password=manager@123; database=EVisa; server=7Y27QV3\\SQLEXPRESS");
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("INSERT INTO hr VALUES('" + hrName.Text + "','" + hrUsername.Text + "','" + hrEmail.Text + "','" + hrPassword.Text + "','" + hrLocation.Text + "')", con);
+                cmd.ExecuteNonQuery();
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", $"alert('Added {hrName.Text} to HR database');", true);
+            }
+            catch (Exception ex)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", $"alert('Error: {ex.Message}');", true);
+            }
+            finally
+            {
+                con.Close();
+                hrName.Text = string.Empty;
+                hrEmail.Text = string.Empty;
+                hrPassword.Text = string.Empty;
+                hrLocation.Text = string.Empty;
+                hrPassword.Text = string.Empty;
+                hrUsername.Text = string.Empty;
+            }
         }
 
         protected void BtnAddEmployee_Click(object sender, EventArgs e)
         {
-
+            SqlConnection con = new SqlConnection("uid=sa; password=manager@123; database=EVisa; server=7Y27QV3\\SQLEXPRESS");
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("INSERT INTO employees VALUES('" + employeeName.Text + "','" + employeeUsername.Text + "','" + employeeEmail.Text + "','" + employeePassword.Text + "','" + employeeLocation.Text + "')", con);
+                cmd.ExecuteNonQuery();
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", $"alert('Added {employeeName.Text} to EMPLOYEE database');", true);
+            }
+            catch (Exception ex)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", $"alert('Error: {ex.Message}');", true);
+            }
+            finally
+            {
+                con.Close();
+                employeeName.Text = string.Empty;
+                employeeEmail.Text = string.Empty;
+                employeePassword.Text = string.Empty;
+                employeeLocation.Text = string.Empty;
+                employeeUsername.Text = string.Empty;
+            }
         }
     }
 }

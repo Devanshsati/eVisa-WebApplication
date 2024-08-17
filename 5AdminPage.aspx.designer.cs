@@ -60,6 +60,15 @@ namespace WebApplication06_eVisa
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvHrUsername;
 
         /// <summary>
+        /// revHrUsername control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revHrUsername;
+
+        /// <summary>
         /// hrEmail control.
         /// </summary>
         /// <remarks>
@@ -78,6 +87,15 @@ namespace WebApplication06_eVisa
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvHrEmail;
 
         /// <summary>
+        /// revHrEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revHrEmail;
+
+        /// <summary>
         /// hrPassword control.
         /// </summary>
         /// <remarks>
@@ -94,6 +112,15 @@ namespace WebApplication06_eVisa
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvHrPassword;
+
+        /// <summary>
+        /// revHrPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revHrPassword;
 
         /// <summary>
         /// hrLocation control.
@@ -168,6 +195,15 @@ namespace WebApplication06_eVisa
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmployeeUsername;
 
         /// <summary>
+        /// revEmployeeUsername control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revEmployeeUsername;
+
+        /// <summary>
         /// employeeEmail control.
         /// </summary>
         /// <remarks>
@@ -186,6 +222,15 @@ namespace WebApplication06_eVisa
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmployeeEmail;
 
         /// <summary>
+        /// revEmployeeEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revEmployeeEmail;
+
+        /// <summary>
         /// employeePassword control.
         /// </summary>
         /// <remarks>
@@ -202,6 +247,15 @@ namespace WebApplication06_eVisa
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmployeePassword;
+
+        /// <summary>
+        /// revEmployeePassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revEmployeePassword;
 
         /// <summary>
         /// employeeLocation control.
@@ -247,6 +301,24 @@ namespace WebApplication06_eVisa
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView VisaGridView;
+
+        /// <summary>
+        /// txtSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtSearch;
+
+        /// <summary>
+        /// btnSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSearch;
 
         /// <summary>
         /// ApplicantGridView control.

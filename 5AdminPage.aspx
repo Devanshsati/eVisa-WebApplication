@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Management Dashboard</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #4facfe, #00f2fe);
+            background: linear-gradient(to right, violet, blue);
             user-select: none;
         }
         .container {
@@ -147,7 +147,7 @@
             <div class="card">
                 <h3>Manage HR</h3>
                 <p>View, edit, or delete added HR details.</p>
-                <button type="button" class="btn btn-primary" onclick="openPopup('manageHR')">Manage HR</button>
+                <button type="button" class="btn btn-primary" onclick="location.href='6ManageHR.aspx'">Manage HR</button>
             </div>
 
             <div class="card">
@@ -159,7 +159,7 @@
             <div class="card">
                 <h3>Manage Employee</h3>
                 <p>View, edit, or delete added employee details.</p>
-                <button type="button" class="btn btn-primary" onclick="openPopup('manageEmployee')">Manage Employee</button>
+                <button type="button" class="btn btn-primary" onclick="location.href='7ManageEMP.aspx'">Manage Employee</button>
             </div>
 
             <div class="card">
@@ -216,18 +216,30 @@
                     <asp:TextBox ID="hrUsername" runat="server" placeholder="Enter HR username"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvHrUsername" runat="server" ControlToValidate="hrUsername"
                         ErrorMessage="Username is required." ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="revHrUsername" runat="server" ControlToValidate="hrUsername"
+                        ErrorMessage="Username must be alphanumeric and at least 3 characters long." 
+                        ForeColor="Red" Display="Dynamic"
+                        ValidationExpression="^(?=.{3,})([a-zA-Z0-9]+)$"></asp:RegularExpressionValidator>
                 </div>
                 <div class="form-group">
                     <label for="hrEmail">HR Email:</label>
                     <asp:TextBox ID="hrEmail" runat="server" placeholder="Enter HR email" TextMode="Email"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvHrEmail" runat="server" ControlToValidate="hrEmail"
                         ErrorMessage="Email is required." ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="revHrEmail" runat="server" ControlToValidate="hrEmail"
+                        ErrorMessage="Invalid email format." 
+                        ForeColor="Red" Display="Dynamic"
+                        ValidationExpression="^[^@\s]+@[^@\s]+\.[^@\s]+$"></asp:RegularExpressionValidator>
                 </div>
                 <div class="form-group">
                     <label for="hrPassword">HR Password:</label>
                     <asp:TextBox ID="hrPassword" runat="server" placeholder="Enter HR password" TextMode="Password"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvHrPassword" runat="server" ControlToValidate="hrPassword"
                         ErrorMessage="Password is required." ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="revHrPassword" runat="server" ControlToValidate="hrPassword"
+                        ErrorMessage="Password must be at least 6 characters long." 
+                        ForeColor="Red" Display="Dynamic"
+                        ValidationExpression="^.{6,}$"></asp:RegularExpressionValidator>
                 </div>
                 <div class="form-group">
                     <label for="hrLocation">HR Location:</label>
@@ -242,6 +254,7 @@
         </div>
 
 
+
         <!-- Popup for Managing HR -->
         <div class="popup" id="manageHR">
             <div class="popup-content">
@@ -254,7 +267,7 @@
         </div>
 
         <!-- Popup for Adding Employee -->
-       <div class="popup" id="addEmployee">
+        <div class="popup" id="addEmployee">
             <div class="popup-content fit">
                 <span class="close" onclick="closePopup('addEmployee')">&times;</span>
                 <h3>Add Employee</h3>
@@ -269,18 +282,30 @@
                     <asp:TextBox ID="employeeUsername" runat="server" placeholder="Enter Username"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvEmployeeUsername" runat="server" ControlToValidate="employeeUsername"
                         ErrorMessage="Username is required." ForeColor="Red" Display="Dynamic" ValidationGroup="AddEmployee"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="revEmployeeUsername" runat="server" ControlToValidate="employeeUsername"
+                        ErrorMessage="Username must be alphanumeric and at least 3 characters long." 
+                        ForeColor="Red" Display="Dynamic" 
+                        ValidationExpression="^(?=.{3,})([a-zA-Z0-9]+)$" ValidationGroup="AddEmployee"></asp:RegularExpressionValidator>
                 </div>
                 <div class="form-group">
                     <label for="employeeEmail">Employee Email:</label>
                     <asp:TextBox ID="employeeEmail" runat="server" placeholder="Enter Employee Email" TextMode="Email"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvEmployeeEmail" runat="server" ControlToValidate="employeeEmail"
                         ErrorMessage="Email is required." ForeColor="Red" Display="Dynamic" ValidationGroup="AddEmployee"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="revEmployeeEmail" runat="server" ControlToValidate="employeeEmail"
+                        ErrorMessage="Invalid email format." 
+                        ForeColor="Red" Display="Dynamic" 
+                        ValidationExpression="^[^@\s]+@[^@\s]+\.[^@\s]+$" ValidationGroup="AddEmployee"></asp:RegularExpressionValidator>
                 </div>
                 <div class="form-group">
                     <label for="employeePassword">Password:</label>
                     <asp:TextBox ID="employeePassword" runat="server" placeholder="Enter Password" TextMode="Password"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvEmployeePassword" runat="server" ControlToValidate="employeePassword"
                         ErrorMessage="Password is required." ForeColor="Red" Display="Dynamic" ValidationGroup="AddEmployee"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="revEmployeePassword" runat="server" ControlToValidate="employeePassword"
+                        ErrorMessage="Password must be at least 6 characters long." 
+                        ForeColor="Red" Display="Dynamic" 
+                        ValidationExpression="^.{6,}$" ValidationGroup="AddEmployee"></asp:RegularExpressionValidator>
                 </div>
                 <div class="form-group">
                     <label for="employeeLocation">Location:</label>
@@ -322,6 +347,10 @@
             <div class="popup-content">
                 <span class="close" onclick="closePopup('manageApplicant')">&times;</span>
                 <h3>Manage Applicants</h3>
+                <div class="d-flex">
+                    <asp:TextBox ID="txtSearch" runat="server" CssClass="form-control w-25 me-4" Placeholder="Applicant Name/Location"/>
+                    <asp:Button ID="btnSearch" runat="server" Text="Search" CssClass="btn btn-warning" OnClick="BtnAddEmployee_Click" />
+                </div>
                 <div class="grid-scroll">
                     <asp:GridView ID="ApplicantGridView" runat="server" AutoGenerateColumns="True" CssClass="grid-view"></asp:GridView>
                 </div>
@@ -382,5 +411,6 @@
             document.getElementById(popupId).style.display = "none";
         }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
