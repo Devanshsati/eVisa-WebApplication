@@ -98,8 +98,67 @@ namespace WebApplication06_eVisa
 
         protected void BtnChangePassword_Click(object sender, EventArgs e)
         {
+            string connectionString = "uid=sa; password=manager@123; database=EVisa; server=7Y27QV3\\SQLEXPRESS";
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    con.Open();
+                    string fetchPasswordQuery = "SELECT PASSWORD FROM HR WHERE HRID = @HrID";
+                    string currentPasswordFromDb = null;
 
+                    using (SqlCommand fetchPasswordCmd = new SqlCommand(fetchPasswordQuery, con))
+                    {
+                        fetchPasswordCmd.Parameters.AddWithValue("@HrID", Request.QueryString["uid"]);
+
+                        object result = fetchPasswordCmd.ExecuteScalar();
+                        if (result != null)
+                        {
+                            currentPasswordFromDb = result.ToString();
+                        }
+                        else
+                        {
+                            ClientScript.RegisterStartupScript(this.GetType(), "alert", $"alert('No record found for Visa ID {txtVisaId.Text}.');", true);
+                            return;
+                        }
+                    }
+
+                    // Verify if the current password entered by the user matches the password in the database
+                    if (txtCurrentPassword.Text == currentPasswordFromDb)
+                    {
+                        // Update the password
+                        string updatePasswordQuery = "UPDATE HR SET PASSWORD = @NewPassword WHERE HRID = @HrID";
+                        using (SqlCommand updatePasswordCmd = new SqlCommand(updatePasswordQuery, con))
+                        {
+                            updatePasswordCmd.Parameters.AddWithValue("@NewPassword", txtNewPassword.Text);
+                            updatePasswordCmd.Parameters.AddWithValue("@HrID", Request.QueryString["uid"]);
+                            int rowsAffected = updatePasswordCmd.ExecuteNonQuery();
+                            if (rowsAffected > 0)
+                            {
+                                ClientScript.RegisterStartupScript(this.GetType(), "alert", $"alert('HR Password is updated successfully.');", true);
+                            }
+                            else
+                            {
+                                ClientScript.RegisterStartupScript(this.GetType(), "alert", $"alert('Failed to update the password.');", true);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        ClientScript.RegisterStartupScript(this.GetType(), "alert", $"alert('Current password is incorrect.');", true);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", $"alert('Error: {ex.Message}');", true);
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }
         }
+
 
         protected void BtnSendFeedback_Click(object sender, EventArgs e)
         {
