@@ -22,7 +22,7 @@ namespace WebApplication06_eVisa
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    uid= reader["employeeid"].ToString();
+                    uid = reader["adminid"].ToString();
                     Response.Redirect("5AdminPage.aspx?uid=" + uid);
                     string script = $"alert('Login Successful: {txtUsername.Text}');" + "window.location.href='5AdminPage.aspx';";
                     ClientScript.RegisterStartupScript(this.GetType(), "alertAndRedirect", script, true);
@@ -31,7 +31,7 @@ namespace WebApplication06_eVisa
                 {
                     ClientScript.RegisterStartupScript(this.GetType(), "alert", $"alert('Invalid Username and Password');", true);
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -41,8 +41,6 @@ namespace WebApplication06_eVisa
             {
                 con.Close();
             }
-
-
         }
     }
 }

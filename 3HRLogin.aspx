@@ -75,7 +75,7 @@
                 <label for="txtPassword" class="form-label">Password</label>
                 <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" TextMode="Password" required="true" />
             </div>
-            <asp:Button ID="btnLogin" runat="server" CssClass="btn btn-primary btn-login" Text="Login"/>
+            <asp:Button ID="btnLogin" runat="server" CssClass="btn btn-primary btn-login" Text="Login" OnClick="BtnLogin_Click" />
         </form>
         <div class="footer-text">
             <p>&copy; 2024 Devansh. All Rights Reserved</p>
