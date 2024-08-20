@@ -154,6 +154,7 @@
     <Content Include="6ManageHR.aspx" />
     <Content Include="7ManageEMP.aspx" />
     <Content Include="8HRPage.aspx" />
+    <Content Include="9EmpPage.aspx" />
     <Content Include="About.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
@@ -297,6 +298,13 @@
     </Compile>
     <Compile Include="8HRPage.aspx.designer.cs">
       <DependentUpon>8HRPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="9EmpPage.aspx.cs">
+      <DependentUpon>9EmpPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="9EmpPage.aspx.designer.cs">
+      <DependentUpon>9EmpPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\AddPhoneNumber.aspx.cs">
       <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
