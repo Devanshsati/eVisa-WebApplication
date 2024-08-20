@@ -419,7 +419,7 @@ If you wish to contribute to this project, please fork the repository and submit
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache License License. See the License file for details.
 
 ## Contact
 
