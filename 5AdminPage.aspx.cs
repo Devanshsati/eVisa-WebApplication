@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Data;
-using System.Web.UI.WebControls;
-using System.Xml.Linq;
 
 namespace WebApplication06_eVisa
 {

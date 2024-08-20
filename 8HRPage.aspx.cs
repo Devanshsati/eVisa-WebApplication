@@ -58,6 +58,11 @@ namespace WebApplication06_eVisa
             finally
             {
                 con.Open();
+                txtEmployeeId.Text = string.Empty;
+                txtVisaType.Text = string.Empty;
+                txtExpiry.Text = string.Empty;
+                txtRenewalRequest.Text = string.Empty;
+
             }
         }
 
@@ -92,6 +97,8 @@ namespace WebApplication06_eVisa
                 finally
                 {
                     con.Close();
+                    txtFinalResult.Text = string.Empty;
+                    txtVisaId.Text = string.Empty;
                 }
             }
         }
@@ -185,6 +192,7 @@ namespace WebApplication06_eVisa
                 finally
                 {
                     con.Close();
+                    txtFeedback.Text = string.Empty;
                 }
             }
         }
