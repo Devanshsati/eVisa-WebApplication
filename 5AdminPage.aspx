@@ -11,7 +11,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to right, violet, blue);
+            background: linear-gradient(135deg, #6a82fb 0%, #fc5c7d 100%);
             user-select: none;
         }
         .container {
