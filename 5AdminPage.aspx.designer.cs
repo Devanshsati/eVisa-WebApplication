@@ -150,15 +150,6 @@ namespace WebApplication06_eVisa
         protected global::System.Web.UI.WebControls.Button btnAddHR;
 
         /// <summary>
-        /// gvHR control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvHR;
-
-        /// <summary>
         /// employeeName control.
         /// </summary>
         /// <remarks>
@@ -283,15 +274,6 @@ namespace WebApplication06_eVisa
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAddEmployee;
-
-        /// <summary>
-        /// gvEmployee control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvEmployee;
 
         /// <summary>
         /// VisaGridView control.

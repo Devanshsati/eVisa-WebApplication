@@ -14,85 +14,7 @@
             background: linear-gradient(135deg, #6a82fb 0%, #fc5c7d 100%);
             user-select: none;
         }
-        .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .card {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            text-align: center;
-            position: relative;
-        }
-        .card h3 {
-            margin-bottom: 15px;
-        }
-        .card a {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 15px;
-            background: #007BFF;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .card a:hover {
-            background: #0056b3;
-        }
-        .close {
-            cursor: pointer;
-            float: right;
-            font-size: 25px;
-            color: #ff0000;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            margin-right: 10px;
-        }
-        .form-group input, 
-        .form-group textarea {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        .form-group button {
-            margin-top: 10px;
-            padding: 10px 15px;
-            background: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .form-group button:hover {
-            background: #0056b3;
-        }
-        .grid-view {
-            margin-top: 20px;
-            border-collapse: collapse;
-            width: 100%;
-        }
-        .grid-view th, 
-        .grid-view td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-        }
-        .grid-view th {
-            background-color: #f2f2f2;
-        }
-        .action-buttons {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 10px;
-        }
+
         .header {
             background-color: #004c99;
             color: white;
@@ -100,14 +22,104 @@
             text-align: center;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
         }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            flex: 1 1 calc(25% - 20px);
+            box-sizing: border-box;
+            max-width: calc(25% - 20px);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+        }
+
+        .card a, .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .close {
+            cursor: pointer;
+            float: right;
+            font-size: 25px;
+            color: #ff0000;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            margin-right: 10px;
+        }
+
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .form-group button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .grid-view {
+            margin-top: 20px;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .grid-view th, 
+        .grid-view td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .grid-view th {
+            background-color: #f2f2f2;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+
         .grid-scroll {
             max-height: 80%;
             overflow-y: auto;
             display: block;
         }
+
         .grid-scroll table {
-            width: 100%;   
+            width: 100%;
         }
+
         .popup {
             display: none;
             position: fixed;
@@ -119,6 +131,7 @@
             overflow: auto;
             background-color: rgba(0, 0, 0, 0.4);
         }
+
         .popup-content {
             background-color: #fefefe;
             margin: 5% auto;
@@ -127,7 +140,8 @@
             width: 80%;
             border-radius: 15px;
         }
-        .fit{
+
+        .fit {
             max-width: fit-content;
         }
     </style>
@@ -253,19 +267,6 @@
             </div>
         </div>
 
-
-
-        <!-- Popup for Managing HR -->
-        <div class="popup" id="manageHR">
-            <div class="popup-content">
-                <span class="close" onclick="closePopup('manageHR')">&times;</span>
-                <h3>Manage HR</h3>
-                <div class="grid-scroll">
-                    <asp:GridView ID="gvHR" runat="server" AutoGenerateColumns="True" CssClass="grid-view"></asp:GridView>
-                </div>
-            </div>
-        </div>
-
         <!-- Popup for Adding Employee -->
         <div class="popup" id="addEmployee">
             <div class="popup-content fit">
@@ -319,18 +320,6 @@
             </div>
         </div>
 
-
-        <!-- Popup for Managing Employee -->
-        <div class="popup" id="manageEmployee">
-            <div class="popup-content">
-                <span class="close" onclick="closePopup('manageEmployee')">&times;</span>
-                <h3>Manage Employee</h3>
-                <div class="grid-scroll">
-                    <asp:GridView ID="gvEmployee" runat="server" AutoGenerateColumns="True" CssClass="grid-view"></asp:GridView>
-                </div>
-            </div>
-        </div>
-
         <!-- Popup for Managing Visa -->
         <div class="popup" id="manageVisa">
             <div class="popup-content">
@@ -349,7 +338,7 @@
                 <h3>Manage Applicants</h3>
                 <div class="d-flex">
                     <asp:TextBox ID="txtSearch" runat="server" CssClass="form-control w-25 me-4" Placeholder="Applicant Name/Location"/>
-                    <asp:Button ID="btnSearch" runat="server" Text="Search" CssClass="btn btn-warning" OnClick="BtnAddEmployee_Click" />
+                    <asp:Button ID="btnSearch" runat="server" Text="Search" CssClass="btn btn-warning" OnClick="BtnSearch_Click" />
                 </div>
                 <div class="grid-scroll">
                     <asp:GridView ID="ApplicantGridView" runat="server" AutoGenerateColumns="True" CssClass="grid-view"></asp:GridView>

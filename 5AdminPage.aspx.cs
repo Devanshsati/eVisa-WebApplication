@@ -108,5 +108,26 @@ namespace WebApplication06_eVisa
                 employeeUsername.Text = string.Empty;
             }
         }
+
+        protected void BtnSearch_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection("uid=sa; password=manager@123; database=EVisa; server=7Y27QV3\\SQLEXPRESS");
+            try
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter("select a.* from applicantreport a join Employees e on a.EmployeeID=e.EmployeeID where e.name='" + txtSearch.Text + "' or e.location='" + txtSearch.Text + "'", con);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                ApplicantGridView.DataSource = ds;
+                ApplicantGridView.DataBind();
+            }
+            catch (Exception ex)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", $"alert('Error: {ex.Message}');", true);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
     }
 }
