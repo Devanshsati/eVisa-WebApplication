@@ -1,9 +1,22 @@
-# WebApplication06-eVisa
-# E-Visa Portal README
+# E-Visa Portal README , WebApplication06-eVisa
+
+## E-Visa Portal Screenshots
+| ![Screenshot 2024-08-23 153302](https://github.com/user-attachments/assets/39a5913f-c383-4eb5-9054-34598fb08975) | ![Screenshot 2024-08-23 153450](https://github.com/user-attachments/assets/435b1581-893c-4ea8-80e2-ca67f1c85f05) | ![Screenshot 2024-08-23 153431](https://github.com/user-attachments/assets/ece344ef-6910-4408-8ef1-a5de64691448) |
+| --- | --- | --- |
+| ![Screenshot 2024-08-23 153412](https://github.com/user-attachments/assets/0a39d789-2549-4a77-9dfc-f544778ea2a0) | ![Screenshot 2024-08-23 153351](https://github.com/user-attachments/assets/ae12a0db-86d6-43df-9d88-0892cac3ef9c) | ![Screenshot 2024-08-23 153319](https://github.com/user-attachments/assets/3c9d1ec9-7c8a-4f2d-9663-955656be1346) |
+| ![Screenshot 2024-08-23 153507](https://github.com/user-attachments/assets/10c6c6c9-073d-4786-bfeb-444dcc1e5997) | ![Screenshot 2024-08-23 153827](https://github.com/user-attachments/assets/7fee36ea-4d3d-4685-97fc-6b0a02e34954) | ![Screenshot 2024-08-23 153752](https://github.com/user-attachments/assets/8f2306da-93a1-45f1-8ff3-32bca0c68867) |
+| ![Screenshot 2024-08-23 153712](https://github.com/user-attachments/assets/1a01c9fb-7a90-4e86-8714-f3d663d6dd16) | ![Screenshot 2024-08-23 153650](https://github.com/user-attachments/assets/5c6204d8-1255-4551-be77-c690a7af5119) | ![Screenshot 2024-08-23 153635](https://github.com/user-attachments/assets/22ff0e0a-64f7-422c-8d64-446d1b61f8ff) |
+| ![Screenshot 2024-08-23 162853](https://github.com/user-attachments/assets/d3f02d2c-bd98-4d68-b283-7dd4c7979f8c) | ![Screenshot 2024-08-23 153811](https://github.com/user-attachments/assets/043e3283-28bb-46e7-b148-f069394f5b00) |  |
+
+
 
 ## Overview
 
 The **E-Visa Portal** is a web application designed to streamline visa management tasks. The portal provides different access levels for Employees, Admins, and HR personnel. This README covers the key aspects of the `1PortalPage.aspx` file, including its purpose, layout, and design.
+
+### Admin Access    : ninascott	nina.scott@admin.com	AdminPassword1
+### HR Access       : alicewilliams	alice.williams@hr.com	HRPassword1
+### Employee Access : johndoe	john.doe@example.com	Password1
 
 ## File Structure
 
